@@ -45,7 +45,7 @@ static void game_details(void)
     printf("\033[7;1;5;32m");
     printf("*---------------------------------------------*\n");
     printf("|                   Round: %d                  |\n", game_num);
-    printf("|%10s: %2d          %10s: %2d       |\n", p1, p1_result, p2, p2_result);
+    printf("|%-10s: %2d                 %-10s: %2d|\n", p1, p1_result, p2, p2_result);
     printf("*---------------------------------------------*\n");
     printf("\033[0m");
 }

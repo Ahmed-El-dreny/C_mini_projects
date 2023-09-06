@@ -1,27 +1,10 @@
-#include "soduko.h"
+#include "sudoku.h"
 
 static char arr[ROW][COL];
 static int num_of_digits = MAX_NUM_ELEMENT - FIXED_ELEMENTS;
 static char arr2[FIXED_ELEMENTS];
 
 /***************************Static functions**********************************/
-
-/** \brief: fixed_nums fun contains a fixed number places that the game started with,
- *
- * \param: takes row number as int
- * \param: takes col number as int
- * \return: 1 if the entered place contain fixed data and 0 if not.
- *
- */
-
-static char fixed_nums(int row, int col)
-{
-    if(FIXED_PLACES)
-    {
-        return 1;
-    }
-    return 0;
-}
 
 
 /** \brief: check_validity_num fun check if i can add or edit number or not
@@ -40,9 +23,14 @@ static char check_validity_num(char num, int row, int col)
 {
     int counter;
 
-    if(fixed_nums(row,col))
+    if(FIXED_PLACES)
     {
         return 1;
+    }
+
+    else if(!(row >= 0 && row < 9) || !(col >= 0 && col < 9))
+    {
+        return 2;
     }
 
     else if(!(num >= '1' && num <= '9'))
@@ -95,16 +83,6 @@ void init_soduko(void)
     arr[6][0] = '2', arr[6][4] = '9', arr[6][5] = '3';
     arr[7][3] = '2', arr[7][4] = '8';
     arr[8][0] = '5', arr[8][5] = '7';
-    /*int counter;
-
-    for(row = 0; row < 9; row++)
-    {
-        for(col = 0; col < 9; col++)
-        {
-            if(arr[row][col] != ' ')
-                arr2[counter++] = (row-1)*9+(col-1)
-        }
-    }*/
 }
 
 
@@ -136,7 +114,7 @@ void print_soduko(void)
         {
             printf("|");
 
-            if(fixed_nums(row, col))
+            if(FIXED_PLACES)
             {
                 printf("\033[7;1;5;32m");
 
@@ -196,7 +174,7 @@ char set_num(char num, int row, int col)
 
     else if(check_validity_num(num, row, col) == 2)
     {
-        printf("OUT OF RANGE !!!\ntry again with numbers from 1 to 9\n");
+        printf("OUT OF RANGE !!!\ntry again and make sure that rows, columns and numbers have range from 1 to 9\n");
 
         printf("\033[0m");
 

@@ -1,4 +1,4 @@
-#include "soduko_animations.h"
+#include "sudoku_animations.h"
 
 static void sleep_anima(void)
 {
@@ -14,7 +14,7 @@ void welcome_mas(void)
 {
     printf("\033[7;1;5;32m");
     sleep_anima();
-    printf("|       Welcome to Soduko puzzle      |\n");
+    printf("|       Welcome to Sudoku puzzle      |\n");
     Sleep(50);
     printf("|     developed by Ahmed El-dreny     |\n");
     Sleep(100);

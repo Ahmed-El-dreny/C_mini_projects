@@ -1,5 +1,5 @@
-#ifndef SODUKO_ANIMATIONS_H_INCLUDED
-#define SODUKO_ANIMATIONS_H_INCLUDED
+#ifndef SUDOKU_ANIMATIONS_H_INCLUDED
+#define SUDOKU_ANIMATIONS_H_INCLUDED
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -11,4 +11,4 @@ void win_mas(void);
 
 void lose_mas(void);
 
-#endif // SODUKO_ANIMATIONS_H_INCLUDED
+#endif // SUDOKU_ANIMATIONS_H_INCLUDED

@@ -1,17 +1,17 @@
-#ifndef SODUKO_H_INCLUDED
-#define SODUKO_H_INCLUDED
+#ifndef SUDOKU_H_INCLUDED
+#define SUDOKU_H_INCLUDED
 
-#include "soduko_animations.h"
+#include "sudoku_animations.h"
 
 #define ROW                     9
 #define COL                     9
 #define MAX_NUM_ELEMENT         81               //ROW*COL
 #define FIXED_ELEMENTS          23               //fixed elements when game start
 #define FIXED_PLACES            (row == 0 && col == 3) || (row == 0 && col == 8) || (row == 1 && col == 1) || (row == 1 && col == 4) || (row == 1 && col == 5)||\
-       (row == 2 && col == 3) || (row == 2 && col == 4) || (row == 2 && col == 8) || (row == 3 && col == 2) || (row == 3 && col == 7)||\
-       (row == 3 && col == 8) || (row == 4 && col == 2) || (row == 4 && col == 6) || (row == 5 && col == 0) || (row == 5 && col == 1)||\
-       (row == 5 && col == 6) || (row == 6 && col == 0) || (row == 6 && col == 4) || (row == 6 && col == 5) || (row == 7 && col == 3)||\
-       (row == 7 && col == 4) || (row == 8 && col == 0) || (row == 8 && col == 5)        //fixed places that not empty at game start
+								(row == 2 && col == 3) || (row == 2 && col == 4) || (row == 2 && col == 8) || (row == 3 && col == 2) || (row == 3 && col == 7)||\
+								(row == 3 && col == 8) || (row == 4 && col == 2) || (row == 4 && col == 6) || (row == 5 && col == 0) || (row == 5 && col == 1)||\
+								(row == 5 && col == 6) || (row == 6 && col == 0) || (row == 6 && col == 4) || (row == 6 && col == 5) || (row == 7 && col == 3)||\
+								(row == 7 && col == 4) || (row == 8 && col == 0) || (row == 8 && col == 5)        //fixed places that not empty at game start
 
 
 /** \brief: init_soduko fun initialize data at beginning of program
@@ -58,4 +58,4 @@ char edit_num(char num, int row, int col);
  */
 char is_finsh(void);
 
-#endif // SODUKO_H_INCLUDED
+#endif // SUDOKU_H_INCLUDED
